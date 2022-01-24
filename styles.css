@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --btn-primary:tomato;
+    --bg-color:bisque;
+    --text-color:white;
+    --btn-danger:rgba(255, 0, 0, 0.459);
+}
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.btn{
+  padding: .5em 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-primary{
+
+    background-color: var(--btn-primary);
+}
+.btn-danger {
+    background-color:var(--btn-danger);
+    color: var(--text-color);
+}
+.btn-sm {
+    padding: .5rem;
+}
+
+.header {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+.input-group {
+    display: flex;
+    margin-block: 1rem;
+}
+.form-control {
+flex: 5 ;
+padding: .5rem;
+border-radius: 10px 0 0 10px;
+}
+.input-group button {
+    flex: 1;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #333;
+    color: var(--text-color);
+}
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    box-shadow: 5px 3px 3px rgba(51, 51, 51, 0.274);
+    border:1px solid rgba(51, 51, 51, 0.055);
+    border-radius: 10px;
+    padding: .5rem;
+    margin-top: 1rem;
+}
+
+.todo-title {
+    font-size: 1rem;
+    font-weight: bold;
+}

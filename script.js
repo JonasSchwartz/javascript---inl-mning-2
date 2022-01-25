@@ -10,7 +10,7 @@ const fetchTodos = async () => {
   const data = await resp.json()
   toDoListTwo = data;
 
-  toDoList = toDoListTwo.slice(0, 20);
+  toDoList = toDoListTwo.slice(0, 40);
   showList();
 }
 
@@ -48,10 +48,10 @@ const createItem = item => {
   let btn = document.createElement('button');
   btn.classList.add('btn', 'btn-del');
   if (chBox.checked !== true) {
-    btn.classList.add('visi-btn');
+    btn.classList.add('primary-btn');
   }
   
-
+  btn.innerText = 'DEL';
 
   btn.addEventListener('click', () => {
     if (chBox.checked === true) {

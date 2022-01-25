@@ -2,15 +2,15 @@ const form = document.querySelector('#form');
 const input = document.querySelector('#input');
 const output = document.querySelector('#output');
 
-let todoList = [];
-  let todoListTwo = [];
+let toDoList = [];
+  let toDoListTwo = [];
 
 const fetchTodos = async () => {
   const resp = await fetch('https://jsonplaceholder.typicode.com/todos')
   const data = await resp.json()
-  todoListTwo = data;
+  toDoListTwo = data;
 
-  todoList = todoListTwo.slice(0, 200);
+  toDoList = toDoListTwo.slice(0, 200);
   showList();
 }
 
@@ -18,7 +18,7 @@ fetchTodos ();
 
 const showList = () => {
   output.innerHTML = ''
-  todoList.forEach(listItem => {
+  toDoList.forEach(listItem => {
     createItem(listItem)
   })
 }
@@ -41,7 +41,7 @@ const createItem = item => {
   let chMark = document.createElement('span');
   chMark.classList.add('checkmark');
   
-  let titleText = document.createElement('h4');
+  let titleText = document.createElement('h5');
   titleText.classList.add('list-item-txt');
   titleText.innerText = item.title;
   
@@ -58,30 +58,24 @@ const createItem = item => {
       removeItem(item.id)
     }
   })
-
-
   chGroup.append(chBox, chMark);
   card.append(chGroup, titleText, btn);
   output.appendChild(card);
 }
-
 function removeItem(id) {
-  todoList = todoList.filter(item => item.id !== id)
+  toDoList = toDoList.filter(item => item.id !== id)
   showList()
  
-  
 }
-
-
 form.addEventListener('submit', e => {
   e.preventDefault();
   if(input.value !== '') {
     createNewItem(input.value);
     input.value = '';
-    input.focus()
-  }
+    
+  } 
+  
 })
-
 const createNewItem = title => {
   fetch('https://jsonplaceholder.typicode.com/todos', {
     method: 'POST',
@@ -95,22 +89,32 @@ const createNewItem = title => {
   })
   .then(res => res.json())
   .then(data => {
-    data.id = Date.now().toString();
+    toDoList.unshift(data);
     data.userId = 1;
-    todoList.unshift(data);
+    data.id = Date.now().toString();
+    
     showList()
     
   })
 }
-output.addEventListener('change', e => {
+
+   output.addEventListener('change', e => {
   if (e.target.checked) {
-    todoList.find(item => item.id == e.target.id).completed = true;
+    toDoList.find(item => item.id == e.target.id).completed = true;
     }
   else {
-    todoList.find(item => item.id == e.target.id).completed = false;
+    toDoList.find(item => item.id == e.target.id).completed = false;
     }
               showList()
     });
+
+
+
+
+
+
+
+
 
 
 

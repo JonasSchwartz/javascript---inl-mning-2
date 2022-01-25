@@ -12,6 +12,8 @@
   --btn-add-bg:#464040;
   --btn-del-bg:#fff;
   --chk-bg:#96a0ad;
+  --vis-btn:#bebcbc;
+  --top-header:whitesmoak;
 }
 
 body,
@@ -22,14 +24,14 @@ html {
 
 .container {
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
   
 }
 .form-cont {
   margin: 3em auto;
   padding: 1rem 0;
   width: 80%;
-  max-width: 800px;
+  max-width: 1000px;
   border-radius: 0 0 10px 10px;
   background-color: var(--form-col);
 }
@@ -44,7 +46,7 @@ html {
 
 .form-control{
   flex: 5;
-  outline: none;
+  
   margin: 1rem;
   font-size: 1.5rem;
   border: none;
@@ -61,11 +63,9 @@ html {
 }
 
 .btn {
-  margin-right: 4px;
-  width: 40px;
-  height: 40px;
-  font-weight: 700;
-  border-radius: 50%;
+  margin-right: 6px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   
 }
@@ -74,6 +74,7 @@ html {
   border: transparent;
   color: #fff;
   font-weight: 100;
+  border-radius: 50%;
 }
 .btn-del {
   background-color:var(--btn-del-bg);
@@ -104,8 +105,8 @@ html {
 .visi-btn {
   background-color: #ffffff;
   border: 3px solid #ddd6d6;
-  color: #bebcbc;
-  font-weight: 500;
+  color: var(--vis-btn);
+  
   cursor: default;
  
 }

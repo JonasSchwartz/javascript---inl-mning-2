@@ -1,17 +1,16 @@
-const form = document.querySelector('#Form');
+const form = document.querySelector('#form');
 const input = document.querySelector('#input');
 const output = document.querySelector('#output');
 
-
-let todoList1 = [];
 let todoList = [];
+  let todoListTwo = [];
 
 const fetchTodos = async () => {
   const resp = await fetch('https://jsonplaceholder.typicode.com/todos')
   const data = await resp.json()
-  todoList1 = data;
+  todoListTwo = data;
 
-  todoList = todoList1.slice(0, 10);
+  todoList = todoListTwo.slice(0, 200);
   showList();
 }
 
@@ -20,12 +19,12 @@ fetchTodos ();
 const showList = () => {
   output.innerHTML = ''
   todoList.forEach(listItem => {
-    crateListItem(listItem)
+    createItem(listItem)
   })
 }
 
 
-const crateListItem = item => {
+const createItem = item => {
 
   let card = document.createElement('div');
   card.classList.add('list-item');
@@ -46,15 +45,15 @@ const crateListItem = item => {
   titleText.classList.add('list-item-txt');
   titleText.innerText = item.title;
   
-  let bttn = document.createElement('button');
-  bttn.classList.add('btn', 'btn-del');
+  let btn = document.createElement('button');
+  btn.classList.add('btn', 'btn-del');
   if (chBox.checked !== true) {
-    bttn.classList.add('visi-btn');
+    btn.classList.add('visi-btn');
   }
-  bttn.innerText = 'DEL';
+  btn.innerText = 'DEL';
 
 
-  bttn.addEventListener('click', () => {
+  btn.addEventListener('click', () => {
     if (chBox.checked === true) {
       removeItem(item.id)
     }
@@ -62,7 +61,7 @@ const crateListItem = item => {
 
 
   chGroup.append(chBox, chMark);
-  card.append(chGroup, titleText, bttn);
+  card.append(chGroup, titleText, btn);
   output.appendChild(card);
 }
 
@@ -103,20 +102,16 @@ const createNewItem = title => {
     
   })
 }
-
-
-
 output.addEventListener('change', e => {
   if (e.target.checked) {
-    
     todoList.find(item => item.id == e.target.id).completed = true;
-    
-  }
+    }
   else {
-    
     todoList.find(item => item.id == e.target.id).completed = false;
-    
-  }
-  showList()
-});
+    }
+              showList()
+    });
+
+
+
 

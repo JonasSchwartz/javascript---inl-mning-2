@@ -10,7 +10,7 @@ const fetchTodos = async () => {
   const data = await resp.json()
   toDoListTwo = data;
 
-  toDoList = toDoListTwo.slice(0, 200);
+  toDoList = toDoListTwo.slice(0, 20);
   showList();
 }
 
@@ -50,7 +50,7 @@ const createItem = item => {
   if (chBox.checked !== true) {
     btn.classList.add('visi-btn');
   }
-  btn.innerText = 'DEL';
+  
 
 
   btn.addEventListener('click', () => {
@@ -107,15 +107,3 @@ const createNewItem = title => {
     }
               showList()
     });
-
-
-
-
-
-
-
-
-
-
-
-

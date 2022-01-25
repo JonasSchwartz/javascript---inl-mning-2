@@ -23,8 +23,8 @@ html {
 }
 
 .container {
-  margin: 0 auto;
-  width: 60%;
+  
+  max-width: 80%;
   
 }
 .form-cont {
@@ -32,8 +32,9 @@ html {
   padding: 1rem 0;
   width: 80%;
   max-width: 1000px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
   background-color: var(--form-col);
+  
 }
 
 .top-header {

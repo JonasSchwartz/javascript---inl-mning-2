@@ -41,8 +41,8 @@ const createItem = item => {
   let chMark = document.createElement('span');
   chMark.classList.add('checkmark');
   
-  let titleText = document.createElement('h5');
-  titleText.classList.add('list-item-txt');
+  let titleText = document.createElement('h4');
+  titleText.classList.add('list-text');
   titleText.innerText = item.title;
   
   let btn = document.createElement('button');

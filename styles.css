@@ -15,7 +15,8 @@
   --primary-btn:#bebcbc;
   --top-header:lightgrey;
   --btn-del:#cc1818;
-  --output-bg:lightgrey
+  --output-bg:lightgrey;
+  
 }
 
 body,
@@ -95,11 +96,12 @@ html {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid var(--bg-color)
+  
 }
-.list-item-txt {
+.list-text {
   flex: 1;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .primary-btn {
@@ -117,12 +119,12 @@ html {
   height: 25px;
   cursor: pointer;
   
+  
 }
 
 .custom-checkbox .checkmark {
   width: 100%;
   height: 100%;
-  border: 1px solid #4d4d4d;
   display: flex;
   background: var(--chk-bg) url("./ch.png") center no-repeat;
 }

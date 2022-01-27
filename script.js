@@ -10,7 +10,7 @@ const fetchTodos = async () => {
   const data = await resp.json()
   toDoListTwo = data;
 
-  toDoList = toDoListTwo.slice(0, 40);
+  toDoList = toDoListTwo.slice(0, 10);
   showList();
 }
 
